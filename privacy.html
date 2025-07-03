@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOSTINFLAVOR - Privacy Policy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        /* Color Palette - Consistent with LOSTINFLAVOR brand */
+        :root {
+            --spice-red: #D84315;
+            --midnight-charcoal: #212121;
+            --sandstone-cream: #FAF3E0;
+            --herb-green: #81C784;
+            --golden-curry: #FFB300;
+        }
+
+        /* General Styling */
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--sandstone-cream);
+            color: var(--midnight-charcoal);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--midnight-charcoal);
+        }
+
+        a {
+            color: var(--spice-red);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--golden-curry);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header & Navigation - Consistent with previous pages */
+        header {
+            background-color: var(--midnight-charcoal);
+            color: var(--sandstone-cream);
+            padding: 15px 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        header .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5em;
+            font-weight: bold;
+            color: var(--spice-red);
+            margin-bottom: 5px;
+        }
+
+        header .tagline {
+            font-size: 1.2em;
+            color: var(--sandstone-cream);
+            margin-bottom: 15px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: var(--sandstone-cream);
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active { /* Added active state for current page */
+            background-color: var(--spice-red);
+            color: var(--sandstone-cream);
+        }
+
+        /* Privacy Policy Content Styling */
+        .privacy-content {
+            padding: 60px 0;
+        }
+
+        .privacy-content h1 {
+            text-align: center;
+            font-size: 3em;
+            margin-bottom: 40px;
+            color: var(--spice-red);
+        }
+
+        .privacy-content h2 {
+            font-size: 2.2em;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            color: var(--midnight-charcoal);
+            border-bottom: 2px solid var(--golden-curry);
+            padding-bottom: 10px;
+        }
+
+        .privacy-content h3 {
+            font-size: 1.8em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: var(--spice-red);
+        }
+
+        .privacy-content p {
+            margin-bottom: 15px;
+            font-size: 1.05em;
+            line-height: 1.7;
+        }
+
+        .privacy-content ol, .privacy-content ul {
+            list-style-type: decimal;
+            padding-left: 30px;
+            margin-bottom: 20px;
+        }
+
+        .privacy-content ol li, .privacy-content ul li {
+            margin-bottom: 15px;
+            line-height: 1.7;
+            font-size: 1.05em;
+        }
+
+        .privacy-content ol ol, .privacy-content ul ul {
+            list-style-type: lower-alpha;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding-left: 25px;
+        }
+
+        .privacy-content strong {
+            color: var(--midnight-charcoal);
+        }
+
+        /* Footer - Consistent with previous pages */
+        footer {
+            background-color: var(--midnight-charcoal);
+            color: var(--sandstone-cream);
+            padding: 40px 0;
+            text-align: center;
+            font-size: 0.9em;
+            margin-top: 50px;
+        }
+
+        footer .footer-content {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        footer .footer-section {
+            flex: 1;
+            min-width: 250px;
+            padding: 0 15px;
+        }
+
+        footer .footer-section h4 {
+            color: var(--spice-red);
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        footer .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        footer .footer-section ul li {
+            margin-bottom: 8px;
+        }
+
+        footer .footer-section ul li a {
+            color: var(--sandstone-cream);
+            transition: color 0.3s ease;
+        }
+
+        footer .footer-section ul li a:hover {
+            color: var(--golden-curry);
+        }
+
+        footer .address {
+            margin-top: 20px;
+            line-height: 1.8;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .privacy-content h1 {
+                font-size: 2.2em;
+            }
+            .privacy-content h2 {
+                font-size: 1.8em;
+            }
+            .privacy-content h3 {
+                font-size: 1.4em;
+            }
+            nav ul {
+                flex-direction: column;
+            }
+            nav ul li {
+                margin: 10px 0;
+            }
+            footer .footer-content {
+                flex-direction: column;
+            }
+            footer .footer-section {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">LOSTINFLAVOR</div>
+            <p class="tagline">Recipes Beyond Borders. Find Your Next Craving.</p>
+            <nav>
+                <ul>
+                     <li><a href="index.html">Home</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li><a href="terms.html">Terms</a></li>
+                    <li><a href="cookies.html">Cookies</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="privacy-content">
+            <div class="container">
+                <h1>Privacy Policy for LOSTINFLAVOR</h1>
+                <p><strong>Effective Date: July 3, 2025</strong></p>
+                <p>
+                    At LOSTINFLAVOR, we are committed to protecting your privacy. This Privacy Policy outlines how we collect, use, disclose, and safeguard your information when you visit our website, LOSTINFLAVOR.com (the "Site"), and use our services. Please read this Privacy Policy carefully. If you do not agree with the terms of this Privacy Policy, please do not access the Site.
+                </p>
+                <p>
+                    We reserve the right to make changes to this Privacy Policy at any time and for any reason. We will alert you about any changes by updating the "Effective Date" of this Privacy Policy. You are encouraged to periodically review this Privacy Policy to stay informed of updates. You will be deemed to have been made aware of, will be subject to, and will be deemed to have accepted the changes in any revised Privacy Policy by your continued use of the Site after the date such revised Privacy Policy is posted.
+                </p>
+
+                <h2>1. Collection of Your Information</h2>
+                <p>
+                    We may collect information about you in a variety of ways. The information we may collect on the Site includes:
+                </p>
+                <ol>
+                    <li>
+                        <strong>Personal Data You Provide:</strong>
+                        <p>
+                            We collect personal information that you voluntarily provide to us when you register on the Site, express an interest in obtaining information about us or our products and services, when you participate in activities on the Site (such as posting comments, participating in forums, or entering contests), or otherwise contact us. The personal information that we collect depends on the context of your interactions with us and the Site, the choices you make, and the products and features you use. This may include your name, email address, postal address, phone number, and any other information you choose to provide.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Derivative Data:</strong>
+                        <p>
+                            Information our servers automatically collect when you access the Site, such as your IP address, your browser type, your operating system, your access times, and the pages you have viewed directly before and after accessing the Site. This information is primarily needed to maintain the security and operation of our Site, and for our internal analytics and reporting purposes. It helps us understand how users interact with our content and identify areas for improvement.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Financial Data:</strong>
+                        <p>
+                            Financial information, such as data related to your payment method (e.g., valid credit card number, card brand, expiration date) that we may collect when you purchase, order, return, exchange, or request information about our services from the Site. We store only very limited, if any, financial information that we collect. Otherwise, all financial information is stored by our payment processor, and you are encouraged to review their privacy policy. We prioritize the security of your financial data by leveraging trusted third-party payment gateways.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Data from Social Networks:</strong>
+                        <p>
+                            User information from social networking sites, such as Facebook, Instagram, Pinterest, and others, including your name, your social network username, location, gender, birth date, email address, profile picture, and public data for contacts, if you connect your account to such social networks. This data is collected in accordance with the privacy policies of the respective social media platforms and your privacy settings on those platforms.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Mobile Device Data:</strong>
+                        <p>
+                            Device information, such as your mobile device ID, model, and manufacturer, and information about the location of your device, if you access the Site from a mobile device. This data helps us optimize the mobile experience and potentially offer location-based features, provided you grant the necessary permissions. You can typically control location services through your device settings.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Third-Party Data:</strong>
+                        <p>
+                            Information from third parties, such as personal information or network friends, if you connect your account to the third party and grant the Site permission to access this information. This might include data from advertising partners, analytics providers, or social media platforms that share information with us based on their agreements and your privacy settings.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Data from Contests, Giveaways, and Surveys:</strong>
+                        <p>
+                            Personal and other information you may provide when entering contests or giveaways and/or responding to surveys. This data is used to administer the contest or survey, notify winners, and analyze user preferences to improve our offerings. Participation in such activities is always voluntary.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Publicly Available Information:</strong>
+                        <p>
+                            Information that is publicly available from other sources, such as public databases or data aggregators. This could include demographic information or publicly posted content that helps us understand market trends and user interests, always in compliance with applicable laws.
+                        </p>
+                    </li>
+                </ol>
+
+                <h2>2. Use of Your Information</h2>
+                <p>
+                    Having accurate information about you permits us to provide you with a smooth, efficient, and customized experience. Specifically, we may use information collected about you via the Site to:
+                </p>
+                <ol>
+                    <li>
+                        <strong>Account Management:</strong>
+                        <p>
+                            Create and manage your account, including verifying your identity and setting up your profile. This is essential for providing personalized features like saving recipes, tracking progress, and participating in community forums.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Personalized Content:</strong>
+                        <p>
+                            Deliver targeted advertising, newsletters, and other information regarding promotions and the Site to you. This helps us present content that is most relevant to your culinary interests and preferences, enhancing your overall experience.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Communication:</strong>
+                        <p>
+                            Email you regarding your account or order. This includes transactional emails, password resets, and important service announcements. We aim to keep these communications relevant and timely.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>User Engagement:</strong>
+                        <p>
+                            Enable user-to-user communications, if applicable. This facilitates community interaction, sharing of culinary tips, and collaborative recipe development within our platform, fostering a vibrant user base.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Contest Administration:</strong>
+                        <p>
+                            Administer contests, promotions, and surveys. This involves managing entries, selecting winners, and distributing prizes, all while ensuring fairness and transparency in the process.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Feedback and Support:</strong>
+                        <p>
+                            Compile anonymous statistical data and analysis for use internally or with third parties. This helps us understand overall user behavior and trends without identifying individual users, guiding our product development.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Troubleshooting:</strong>
+                        <p>
+                            Generate a personal profile about you to make your visit to the Site more personalized. This includes remembering your preferences, such as favorite cuisines or dietary restrictions, to tailor your content recommendations.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Service Improvement:</strong>
+                        <p>
+                            Increase the efficiency and operation of the Site. By analyzing how our Site is used, we can identify bottlenecks, optimize loading times, and improve navigation, leading to a smoother user experience.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Marketing:</strong>
+                        <p>
+                            Monitor and analyze usage and trends to improve your experience with the Site. This includes tracking popular recipes, search queries, and feature usage to inform our content strategy and feature development.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Notifications:</strong>
+                        <p>
+                            Notify you of updates to the Site. This ensures you are always aware of new features, policy changes, or important announcements that might affect your use of LOSTINFLAVOR.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Offerings:</strong>
+                        <p>
+                            Offer new products, services, mobile applications, and/or recommendations to you. Based on your interests and past interactions, we may suggest new culinary tools, spice kits, or recipes you might enjoy.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Payment Processing:</strong>
+                        <p>
+                            Perform other business activities as needed. This encompasses various operational tasks, such as managing vendor relationships, conducting internal audits, and ensuring compliance with business regulations.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Fraud Prevention:</strong>
+                        <p>
+                            Prevent fraudulent transactions, monitor against theft, and protect against criminal activity. We employ robust security measures and monitoring systems to safeguard both our users and our platform from malicious activities.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Legal Compliance:</strong>
+                        <p>
+                            Process payments and refunds. This involves securely handling financial transactions through trusted payment processors, ensuring that your purchases and any necessary refunds are processed accurately and efficiently.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Research and Development:</strong>
+                        <p>
+                            Request feedback and contact you about your use of the Site. Your insights are invaluable for us to understand your needs and continuously improve our services and content offerings.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Customer Support:</strong>
+                        <p>
+                            Resolve disputes and troubleshoot problems. When you encounter issues or have questions, we use your information to provide effective and timely customer support, helping you get back to your culinary journey.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Targeted Advertising:</strong>
+                        <p>
+                            Respond to product and customer service requests. Whether it's a recipe clarification or a technical issue, we use your communication to provide accurate and helpful responses, ensuring your satisfaction.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Promotional Activities:</strong>
+                        <p>
+                            Send you a newsletter. Our newsletters keep you informed about new recipes, blog posts, culinary trends, and special offers, providing a regular dose of inspiration directly to your inbox.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Website Analytics:</strong>
+                        <p>
+                            Solicit support for the Site. This might involve surveys or requests for testimonials that help us understand user satisfaction and gather insights for future development and community building initiatives.
+                        </p>
+                    </li>
+                </ol>
+
+                <h2>3. Disclosure of Your Information</h2>
+                <p>
+                    We may share information we have collected about you in certain situations. Your information may be disclosed as follows:
+                </p>
+                <ol>
+                    <li>
+                        <strong>By Law or to Protect Rights:</strong>
+                        <p>
+                            If we believe the release of information about you is necessary to respond to legal process, to investigate or remedy potential violations of our policies, or to protect the rights, property, or safety of others, we may share your information as permitted or required by any applicable law, rule, or regulation. This includes exchanging information with other entities for fraud protection and credit risk reduction.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Third-Party Service Providers:</strong>
+                        <p>
+                            We may share your information with third parties that perform services for us or on our behalf, including payment processing, data analysis, email delivery, hosting services, customer service, and marketing assistance. These service providers are contractually obligated to protect your information and use it only for the purposes for which it was provided.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Marketing Communications:</strong>
+                        <p>
+                            With your consent, or with an opportunity for you to withdraw consent, we may share your information with third parties for marketing purposes, as permitted by law. This allows us to partner with other businesses whose products or services might be of interest to you, always giving you control over your preferences.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Interactions with Other Users:</strong>
+                        <p>
+                            If you interact with other users of the Site, those users may see your name, profile photo, and descriptions of your activity, including sending invitations to other users, chatting with other users, liking posts, and following blogs. This is part of the interactive nature of our community features.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Online Postings:</strong>
+                        <p>
+                            When you post comments, contributions, or other content to the Site, your posts may be viewed by all users and may be publicly distributed outside the Site in perpetuity. Exercise caution when deciding what personal information to disclose in public areas of the Site.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Third-Party Advertisers:</strong>
+                        <p>
+                            We may use third-party advertising companies to serve ads when you visit the Site. These companies may use information about your visits to our Site and other websites that are contained in web cookies in order to provide advertisements about goods and services of interest to you.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Affiliates:</strong>
+                        <p>
+                            We may share your information with our affiliates, in which case we will require those affiliates to honor this Privacy Policy. Affiliates include our parent company and any subsidiaries, joint venture partners, or other companies that we control or that are under common control with us.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Business Partners:</strong>
+                        <p>
+                            We may share your information with our business partners to offer you certain products, services, or promotions. This collaboration allows us to broaden our offerings and provide you with more diverse culinary experiences.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Sale or Bankruptcy:</strong>
+                        <p>
+                            If we reorganize or sell all or a portion of our assets, undergo a merger, or are acquired by another entity, we may transfer your information to the successor entity. If we go out of business or enter bankruptcy, your information would be an asset transferred or acquired by a third party. You acknowledge that such transfers may occur and that the transferee may not honor the commitments we made in this Privacy Policy.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Aggregated and Anonymized Data:</strong>
+                        <p>
+                            We may share aggregated and anonymized demographic information with our partners, advertisers, and other third parties. This information does not identify any specific person and is used for analytical and marketing purposes to understand broad user trends.
+                        </p>
+                    </li>
+                </ol>
+
+                <h2>4. Tracking Technologies</h2>
+                <h3>4.1 Cookies and Web Beacons</h3>
+                <p>
+                    We may use cookies, web beacons, tracking pixels, and other tracking technologies on the Site to help customize the Site and improve your experience. When you access the Site, your personal information is not collected through the use of tracking technology. Most browsers are set to accept cookies by default. You can remove or reject cookies, but be aware that such action could affect the availability and functionality of the Site.
+                </p>
+                <ol>
+                    <li>
+                        <strong>What are Cookies:</strong>
+                        <p>
+                            Cookies are small text files placed on your device when you visit a website. They are widely used to make websites work, or work more efficiently, as well as to provide reporting information. Cookies can remember your preferences, login status, and other settings to enhance your browsing experience.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Types of Cookies Used:</strong>
+                        <p>
+                            We use both session cookies (which expire when you close your browser) and persistent cookies (which stay on your device until they expire or you delete them). These include essential cookies for site functionality, performance cookies for analytics, and targeting cookies for advertising.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Purpose of Cookies:</strong>
+                        <p>
+                            Cookies help us understand how you use the Site, remember your preferences, facilitate login, and provide personalized content and advertisements. They are crucial for delivering a seamless and tailored user experience on LOSTINFLAVOR.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Managing Cookies:</strong>
+                        <p>
+                            You have the ability to accept or decline cookies. Most web browsers automatically accept cookies, but you can usually modify your browser setting to decline cookies if you prefer. Be aware that disabling cookies may affect the functionality of this and many other websites that you visit.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Web Beacons:</strong>
+                        <p>
+                            Web beacons (also known as pixel tags or clear GIFs) are tiny graphics with a unique identifier, similar in function to cookies, and are used to track the online movements of web users. Unlike cookies, which are stored on a user’s computer hard drive, web beacons are embedded invisibly on web pages or in emails.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Third-Party Cookies:</strong>
+                        <p>
+                            We may allow third-party service providers, including advertising and analytics companies, to place cookies on our Site. These third parties may collect information about your online activities over time and across different websites. This is common for services like Google Analytics or advertising networks.
+                        </p>
+                    </li>
+                </ol>
+                <h3>4.2 Internet-Based Advertising</h3>
+                <p>
+                    Additionally, we may use third-party software to serve ads on the Site, implement email marketing campaigns, and manage other interactive marketing initiatives. This software may use cookies or similar tracking technology to help manage and optimize your online experience with us. For more information about opting out of interest-based ads, visit the Network Advertising Initiative Opt-Out Tool or the Digital Advertising Alliance Opt-Out Tool.
+                </p>
+                <h3>4.3 Website Analytics</h3>
+                <p>
+                    We may also partner with selected third-party vendors, such as Google Analytics, to allow tracking technologies and remarketing services on the Site through the use of first party cookies and third-party cookies, to, among other things, analyze and track users’ use of the Site, determine the popularity of certain content, and better understand online activity. By accessing the Site, you consent to the collection and use of your information by these third-party vendors. You are encouraged to review their privacy policy and contact them directly for responses to your questions. We do not transfer personal information to these third-party vendors. However, if you do not want any information to be collected and used by tracking technologies, you can visit the third-party vendor or Network Advertising Initiative Opt-Out Tool or the Digital Advertising Alliance Opt-Out Tool.
+                </p>
+                <ol start="7">
+                    <li>
+                        <strong>Google Analytics:</strong>
+                        <p>
+                            We use Google Analytics to collect information about how users interact with our Site. This includes data such as page views, time spent on pages, and navigation paths. Google Analytics uses cookies to collect this information anonymously. The data helps us understand user behavior and improve our content and site structure.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Opting Out of Analytics:</strong>
+                        <p>
+                            If you wish to prevent your data from being used by Google Analytics, Google provides an opt-out browser add-on. Installing this add-on will prevent Google Analytics JavaScript (ga.js, analytics.js, and dc.js) from sharing information with Google Analytics about visits activity.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Remarketing Services:</strong>
+                        <p>
+                            We may use remarketing services to advertise on third-party websites to previous visitors to our Site. This means that if you visit our Site, you might see our ads on other websites you browse. This is done through cookies placed by our advertising partners.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Social Media Pixels:</strong>
+                        <p>
+                            We may utilize pixels from social media platforms (e.g., Facebook Pixel) to understand user behavior on our Site after they have interacted with our social media advertisements. This helps us measure the effectiveness of our campaigns and tailor future advertising.
+                        </p>
+                    </li>
+                </ol>
+
+                <h2>5. Third-Party Websites</h2>
+                <p>
+                    The Site may contain links to third-party websites and applications of interest, including advertisements and external services, that are not affiliated with us. Once you have used these links to leave the Site, any information you provide to these third parties is not covered by this Privacy Policy, and we cannot guarantee the safety and privacy of your information. Before visiting and providing any information to any third-party websites, you should inform yourself of the privacy policies and practices (if any) of the third party responsible for that website, and should take those steps necessary to, in your discretion, protect the privacy of your information. We are not responsible for the content or privacy and security practices and policies of any third parties, including other sites, services, or applications that may be linked to or from the Site.
+                </p>
+                <ol>
+                    <li>
+                        <strong>External Links:</strong>
+                        <p>
+                            Our Site includes links to external websites for recipes, ingredients, culinary tools, or informational purposes. These links are provided for your convenience and to enhance your culinary journey. However, once you click on an external link, you are no longer on LOSTINFLAVOR.com.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>No Control Over Third Parties:</strong>
+                        <p>
+                            We have no control over, and assume no responsibility for, the content, privacy policies, or practices of any third-party websites or services. Their privacy practices may differ significantly from ours, and we encourage you to review their policies before providing any personal information.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Advertisements:</strong>
+                        <p>
+                            Third-party advertisements displayed on our Site may also collect data. These advertisers operate independently and have their own privacy policies. We do not endorse or make any representations about these third-party sites.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>User Responsibility:</strong>
+                        <p>
+                            It is your sole responsibility to review the privacy policies of any third-party websites you visit. We strongly advise you to exercise caution and discretion when providing any personal data to external sites.
+                        </p>
+                    </li>
+                </ol>
+
+                <h2>6. Security of Your Information</h2>
+                <p>
+                    We use administrative, technical, and physical security measures to help protect your personal information. While we have taken reasonable steps to secure the personal information you provide to us, please be aware that despite our efforts, no security measures are perfect or impenetrable, and no method of data transmission can be guaranteed against any interception or other type of misuse. Any information disclosed online is vulnerable to interception and misuse by unauthorized parties. Therefore, we cannot guarantee complete security if you provide personal information.
+                </p>
+                <ol>
+                    <li>
+                        <strong>Data Encryption:</strong>
+                        <p>
+                            We utilize encryption technologies (such as SSL/TLS) to protect data transmitted between your browser and our servers. This helps ensure that your personal and financial information remains confidential during online transactions and interactions.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Access Controls:</strong>
+                        <p>
+                            Access to your personal data is restricted to authorized personnel who have a legitimate business need to access it. We implement strict internal policies and procedures to ensure that only necessary individuals can view or process your information.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Regular Security Audits:</strong>
+                        <p>
+                            We conduct regular security audits and vulnerability assessments to identify and address potential weaknesses in our systems. This proactive approach helps us stay ahead of emerging threats and maintain a robust security posture.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Employee Training:</strong>
+                        <p>
+                            Our employees receive regular training on data privacy and security best practices. This ensures that all staff members understand their responsibilities in handling personal data and adhere to our strict security protocols.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Incident Response Plan:</strong>
+                        <p>
+                            We have an incident response plan in place to address any potential data breaches or security incidents promptly and effectively. This plan outlines the steps we will take to mitigate harm, notify affected parties, and restore security.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Data Minimization:</strong>
+                        <p>
+                            We adhere to the principle of data minimization, collecting only the personal information that is necessary for the purposes outlined in this policy. This reduces the amount of sensitive data we store and process, thereby lowering potential risks.
+                        </p>
+                    </li>
+                </ol>
+
+                <h2>7. Policy for Children</h2>
+                <p>
+                    We do not knowingly solicit information from or market to children under the age of 13. If you become aware of any data we have collected from children under age 13, please contact us using the contact information provided below.
+                </p>
+                <ol>
+                    <li>
+                        <strong>Age Restriction:</strong>
+                        <p>
+                            LOSTINFLAVOR is intended for users who are at least 13 years old. We do not knowingly collect personal information from children under this age without verifiable parental consent.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Parental Oversight:</strong>
+                        <p>
+                            Parents and guardians are encouraged to monitor their children's internet usage and to help enforce our Privacy Policy by instructing their children never to provide personal information through the Site without their permission.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Reporting Concerns:</strong>
+                        <p>
+                            If you believe that we have inadvertently collected personal information from a child under 13, please contact us immediately. We will take prompt steps to investigate and remove such information from our records.
+                        </p>
+                    </li>
+                </ol>
+
+                <h2>8. Controls for Do-Not-Track Features</h2>
+                <p>
+                    Most web browsers and some mobile operating systems include a Do-Not-Track ("DNT") feature or setting you can activate to signal your privacy preference not to have data about your online browsing activities monitored and collected. No uniform technology standard for recognizing and implementing DNT signals has been finalized. As such, we do not currently respond to DNT browser signals or any other mechanism that automatically communicates your choice not to be tracked online. If a standard for online tracking is adopted that we must follow in the future, we will inform you about that practice in a revised version of this Privacy Policy.
+                </p>
+
+                <h2>9. Your Privacy Rights</h2>
+                <p>
+                    Depending on your location, you may have certain rights regarding your personal information. These rights may include:
+                </p>
+                <ol>
+                    <li>
+                        <strong>Right to Access:</strong>
+                        <p>
+                            You have the right to request access to the personal data we hold about you. This includes requesting a copy of your data and information about how we process it. We aim to provide this information in a clear, concise, and easily understandable format.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Right to Rectification:</strong>
+                        <p>
+                            You have the right to request that we correct any inaccurate or incomplete personal data we hold about you. It is important that your information is accurate, and we encourage you to keep your profile updated.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Right to Erasure (Right to be Forgotten):</strong>
+                        <p>
+                            In certain circumstances, you have the right to request the deletion of your personal data. This applies when the data is no longer necessary for the purposes for which it was collected, or if you withdraw consent and there is no other legal basis for processing.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Right to Restrict Processing:</strong>
+                        <p>
+                            You have the right to request that we restrict the processing of your personal data under certain conditions. This means we may store your data but not process it further, for example, if you contest the accuracy of the data.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Right to Data Portability:</strong>
+                        <p>
+                            You have the right to receive your personal data in a structured, commonly used, and machine-readable format, and to transmit that data to another controller where technically feasible. This allows you to easily transfer your data between services.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Right to Object:</strong>
+                        <p>
+                            You have the right to object to the processing of your personal data in certain situations, particularly when processing is based on legitimate interests or for direct marketing purposes. We will cease processing your data unless we can demonstrate compelling legitimate grounds.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Right to Withdraw Consent:</strong>
+                        <p>
+                            Where we rely on your consent to process your personal data, you have the right to withdraw that consent at any time. Withdrawing consent will not affect the lawfulness of any processing carried out before you withdraw your consent.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Right to Lodge a Complaint:</strong>
+                        <p>
+                            You have the right to lodge a complaint with a supervisory authority if you believe your privacy rights have been violated. We encourage you to contact us first so we can try to resolve any concerns directly.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Exercising Your Rights:</strong>
+                        <p>
+                            To exercise any of these rights, please contact us using the contact information provided at the end of this Privacy Policy. We may require you to verify your identity before responding to your request to ensure the security of your data.
+                        </p>
+                    </li>
+                </ol>
+
+                <h2>10. Data Retention</h2>
+                <p>
+                    We retain personal information for as long as necessary to fulfill the purposes for which it was collected, including for the purposes of satisfying any legal, accounting, or reporting requirements. To determine the appropriate retention period for personal data, we consider the amount, nature, and sensitivity of the personal data, the potential risk of harm from unauthorized use or disclosure of your personal data, the purposes for which we process your personal data and whether we can achieve those purposes through other means, and the applicable legal requirements.
+                </p>
+                <ol>
+                    <li>
+                        <strong>Purpose-Based Retention:</strong>
+                        <p>
+                            We retain your data only for as long as it is necessary to provide you with our services, maintain your account, and fulfill the purposes outlined in this policy. For instance, recipe preferences might be kept as long as your account is active.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Legal Obligations:</strong>
+                        <p>
+                            Certain types of data may be retained for longer periods due to legal or regulatory obligations, such as financial transaction records for tax purposes or user activity logs for security and compliance.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>User-Initiated Deletion:</strong>
+                        <p>
+                            If you request the deletion of your account, we will delete or anonymize your personal information, unless retention is required by law or for legitimate business purposes (e.g., fraud prevention, dispute resolution).
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Anonymization:</strong>
+                        <p>
+                            After the retention period, or if data is no longer needed for its original purpose, we may anonymize it so that it can no longer be associated with you. Anonymized data may be used for statistical analysis and research without privacy concerns.
+                        </p>
+                    </li>
+                </ol>
+
+                <h2>11. International Data Transfers</h2>
+                <p>
+                    Your information, including personal data, may be transferred to — and maintained on — computers located outside of your state, province, country, or other governmental jurisdiction where the data protection laws may differ from those of your jurisdiction. If you are located outside India and choose to provide information to us, please note that we transfer the data, including personal data, to India and process it there. Your consent to this Privacy Policy followed by your submission of such information represents your agreement to that transfer.
+                </p>
+                <ol>
+                    <li>
+                        <strong>Global Operations:</strong>
+                        <p>
+                            As a global culinary platform, LOSTINFLAVOR operates across various geographical regions. This means that data collected in one country may be processed or stored in another, including our primary servers located in India.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Safeguards for Transfers:</strong>
+                        <p>
+                            When transferring data internationally, we implement appropriate safeguards to ensure your personal data remains protected in accordance with this Privacy Policy and applicable laws. This may include using standard contractual clauses or relying on adequacy decisions.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Consent to Transfer:</strong>
+                        <p>
+                            By using our Site and providing your information, you explicitly consent to the international transfer, processing, and storage of your data as described in this section. If you do not agree to these transfers, you may not be able to use certain features of our service.
+                        </p>
+                    </li>
+                </ol>
+
+                <h2>12. Updates to This Privacy Policy</h2>
+                <p>
+                    We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page. We will let you know via email and/or a prominent notice on our Site, prior to the change becoming effective and update the "Effective Date" at the top of this Privacy Policy. You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.
+                </p>
+                <ol>
+                    <li>
+                        <strong>Regular Review:</strong>
+                        <p>
+                            We encourage you to regularly review this Privacy Policy to stay informed about how we are protecting your information. Our commitment to transparency means we will always make the latest version readily available.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Notification of Changes:</strong>
+                        <p>
+                            For significant changes, we will provide prominent notice on our Site or directly communicate with you via email before the changes take effect. This ensures you have sufficient time to review and understand the updates.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Effective Date:</strong>
+                        <p>
+                            The "Effective Date" at the top of this document indicates when the current version of the Privacy Policy came into force. Your continued use of the Site after this date signifies your acceptance of the revised terms.
+                        </p>
+                    </li>
+                </ol>
+
+                <h2>13. Contact Us</h2>
+                <p>
+                    If you have questions or comments about this Privacy Policy, please contact us at:
+                </p>
+                <p>
+                    LOSTINFLAVOR Headquarters<br>
+                    123 Global Flavors Lane<br>
+                    Culinary City, Delhi, 110001<br>
+                    India<br>
+                    Email: info@lostinflavor.com<br>
+                    Phone: +91-1234567890
+                </p>
+                <ol>
+                    <li>
+                        <strong>General Inquiries:</strong>
+                        <p>
+                            For any general questions regarding our privacy practices or this policy, please feel free to reach out to us via email or phone. We are here to clarify any concerns you may have.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Data Subject Requests:</strong>
+                        <p>
+                            If you wish to exercise any of your privacy rights (e.g., access, rectification, erasure), please submit your request through the provided contact methods. We will guide you through the necessary steps for verification and processing.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Feedback and Suggestions:</strong>
+                        <p>
+                            We value your feedback on our Privacy Policy and our data handling practices. If you have suggestions for improvement or notice any ambiguities, please let us know. Your input helps us maintain transparency and trust.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Response Time:</strong>
+                        <p>
+                            We strive to respond to all legitimate requests and inquiries within a reasonable timeframe, typically within 30 days. If a request is particularly complex or numerous, we will inform you and keep you updated on our progress.
+                        </p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#explore">Explore Recipes</a></li>
+                        <li><a href="index.html#features">Interactive Features</a></li>
+                        <li><a href="index.html#marketplace">Marketplace</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect With Us</h4>
+                    <ul>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Pinterest</a></li>
+                        <li><a href="#">Newsletter Signup</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Accessibility Statement</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <p class="address">
+                LOSTINFLAVOR Headquarters<br>
+                123 Global Flavors Lane<br>
+                Culinary City, Delhi, 110001<br>
+                India<br>
+                Email: info@lostinflavor.com<br>
+                Phone: +91-1234567890
+            </p>
+            <p>&copy; 2025 LOSTINFLAVOR. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

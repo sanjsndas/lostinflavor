@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOSTINFLAVOR - Contact Us</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        /* Color Palette - Consistent with LOSTINFLAVOR brand */
+        :root {
+            --spice-red: #D84315;
+            --midnight-charcoal: #212121;
+            --sandstone-cream: #FAF3E0;
+            --herb-green: #81C784;
+            --golden-curry: #FFB300;
+        }
+
+        /* General Styling */
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--sandstone-cream);
+            color: var(--midnight-charcoal);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--midnight-charcoal);
+        }
+
+        a {
+            color: var(--spice-red);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--golden-curry);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header & Navigation - Consistent with previous pages */
+        header {
+            background-color: var(--midnight-charcoal);
+            color: var(--sandstone-cream);
+            padding: 15px 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        header .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5em;
+            font-weight: bold;
+            color: var(--spice-red);
+            margin-bottom: 5px;
+        }
+
+        header .tagline {
+            font-size: 1.2em;
+            color: var(--sandstone-cream);
+            margin-bottom: 15px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: var(--sandstone-cream);
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active { /* Added active state for current page */
+            background-color: var(--spice-red);
+            color: var(--sandstone-cream);
+        }
+
+        /* Contact Content Styling */
+        .contact-content {
+            padding: 60px 0;
+        }
+
+        .contact-content h1 {
+            text-align: center;
+            font-size: 3em;
+            margin-bottom: 40px;
+            color: var(--spice-red);
+        }
+
+        .contact-content h2 {
+            font-size: 2.2em;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            color: var(--midnight-charcoal);
+            border-bottom: 2px solid var(--golden-curry);
+            padding-bottom: 10px;
+        }
+
+        .contact-content h3 {
+            font-size: 1.8em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: var(--spice-red);
+        }
+
+        .contact-content p {
+            margin-bottom: 15px;
+            font-size: 1.05em;
+            line-height: 1.7;
+        }
+
+        .contact-content ol, .contact-content ul {
+            list-style-type: decimal;
+            padding-left: 30px;
+            margin-bottom: 20px;
+        }
+
+        .contact-content ol li, .contact-content ul li {
+            margin-bottom: 15px;
+            line-height: 1.7;
+            font-size: 1.05em;
+        }
+
+        .contact-content ol ol, .contact-content ul ul {
+            list-style-type: lower-alpha;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding-left: 25px;
+        }
+
+        .contact-content strong {
+            color: var(--midnight-charcoal);
+        }
+
+        /* Contact Form Styling */
+        .contact-form-section {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            max-width: 800px;
+            margin: 0 auto 60px; /* Center and add space below */
+        }
+
+        .contact-form-section h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--midnight-charcoal);
+            border-bottom: none; /* Remove border for form heading */
+            padding-bottom: 0;
+        }
+
+        .contact-form-section .form-group {
+            margin-bottom: 20px;
+        }
+
+        .contact-form-section label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: var(--midnight-charcoal);
+        }
+
+        .contact-form-section input[type="text"],
+        .contact-form-section input[type="email"],
+        .contact-form-section textarea {
+            width: calc(100% - 20px); /* Adjust for padding */
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+            color: var(--midnight-charcoal);
+        }
+
+        .contact-form-section textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .contact-form-section button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: var(--spice-red);
+            color: var(--sandstone-cream);
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .contact-form-section button:hover {
+            background-color: var(--golden-curry);
+            transform: translateY(-3px);
+        }
+
+
+        /* Footer - Consistent with previous pages */
+        footer {
+            background-color: var(--midnight-charcoal);
+            color: var(--sandstone-cream);
+            padding: 40px 0;
+            text-align: center;
+            font-size: 0.9em;
+            margin-top: 50px;
+        }
+
+        footer .footer-content {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        footer .footer-section {
+            flex: 1;
+            min-width: 250px;
+            padding: 0 15px;
+        }
+
+        footer .footer-section h4 {
+            color: var(--spice-red);
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        footer .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        footer .footer-section ul li {
+            margin-bottom: 8px;
+        }
+
+        footer .footer-section ul li a {
+            color: var(--sandstone-cream);
+            transition: color 0.3s ease;
+        }
+
+        footer .footer-section ul li a:hover {
+            color: var(--golden-curry);
+        }
+
+        footer .address {
+            margin-top: 20px;
+            line-height: 1.8;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .contact-content h1 {
+                font-size: 2.2em;
+            }
+            .contact-content h2 {
+                font-size: 1.8em;
+            }
+            .contact-content h3 {
+                font-size: 1.4em;
+            }
+            nav ul {
+                flex-direction: column;
+            }
+            nav ul li {
+                margin: 10px 0;
+            }
+            footer .footer-content {
+                flex-direction: column;
+            }
+            footer .footer-section {
+                margin-bottom: 20px;
+            }
+            .contact-form-section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">LOSTINFLAVOR</div>
+            <p class="tagline">Recipes Beyond Borders. Find Your Next Craving.</p>
+            <nav>
+                <ul>
+                   <li><a href="index.html">Home</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li><a href="terms.html">Terms</a></li>
+                    <li><a href="cookies.html">Cookies</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="contact-content">
+            <div class="container">
+                <h1>Get in Touch with LOSTINFLAVOR</h1>
+                <p style="text-align: center; max-width: 800px; margin: 0 auto 40px;">
+                    We love hearing from our community! Whether you have a question about a recipe, a suggestion for a new culinary journey, feedback on our site, or just want to share your latest kitchen adventure, please don't hesitate to reach out. Your insights help us make LOSTINFLAVOR even better.
+                </p>
+
+                <div class="contact-form-section">
+                    <h2>Send Us a Message</h2>
+                    <form action="#" method="POST"> <!-- Action would typically point to a server-side script -->
+                        <div class="form-group">
+                            <label for="name">Your Name:</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email:</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject:</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message:</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit">Send Message</button>
+                    </form>
+                </div>
+
+                <h2>Frequently Asked Questions & Support</h2>
+                <p>
+                    Before sending us a message, please check our comprehensive FAQ section below. You might find the answer to your query here, saving you time and getting you back to your culinary adventures faster!
+                </p>
+
+                <ol>
+                    <li>
+                        <strong>How do I search for recipes on LOSTINFLAVOR?</strong>
+                        <p>
+                            You can easily find recipes by navigating to our "Explore" section from the homepage. Here, you'll find options to search by "Craving Type" (e.g., Spicy, Sweet, Comforting), "Destination" (e.g., Street Eats of Bangkok, Mediterranean Coastal Dishes), or "Mood" (e.g., Adventure Meals, Cozy Global Comforts). Our intuitive filtering system allows you to narrow down your choices to discover exactly what you're looking for, or something new to inspire you.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Can I save my favorite recipes?</strong>
+                        <p>
+                            Yes, absolutely! To save your favorite recipes for easy access later, you will need to create a free LOSTINFLAVOR account. Once registered and logged in, you'll see a "Save Recipe" button or icon on each recipe page. Clicking this will add the recipe to your personalized "Global Cravings List," which you can access anytime from your user dashboard.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>How often are new recipes added to the site?</strong>
+                        <p>
+                            We are constantly working to expand our culinary library! New recipes, often focusing on hidden gems and diverse global cuisines, are typically added weekly. We also feature seasonal recipes and special collections, so be sure to check back regularly or subscribe to our newsletter to stay updated on the latest additions and flavor journeys.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>What if I can't find a specific ingredient for a recipe?</strong>
+                        <p>
+                            We understand that global ingredients can sometimes be challenging to source locally. Many of our recipe pages include a "Suggested Swaps for Local Ingredient Access" section, offering common alternatives that can be used without significantly altering the dish's essence. If you still need help, feel free to ask our community in the comments or contact us directly for personalized suggestions.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Is LOSTINFLAVOR suitable for beginners?</strong>
+                        <p>
+                            Absolutely! While we feature bold and adventurous flavors, our recipes are designed with clear, step-by-step instructions and visual guides to support cooks of all skill levels. We aim to make global cooking accessible and enjoyable, encouraging even beginners to experiment and expand their culinary horizons with confidence.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>How can I submit my own recipe to LOSTINFLAVOR?</strong>
+                        <p>
+                            We love to showcase the culinary talents of our community! Currently, recipe submission is by invitation or through specific campaigns. Please follow our blog and social media channels for announcements regarding future opportunities to submit your unique global recipes and share your culinary stories with the LOSTINFLAVOR audience.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>What are "Flavor Reactions" on recipe pages?</strong>
+                        <p>
+                            "Flavor Reactions" are an interactive feature on our recipe pages that allow users to express their immediate feedback using emoji-style responses. You can click on icons like 🔥 (Spicy), 😋 (Comfort), or 🌍 (Travel Vibes) to quickly convey your experience with the dish. This helps other users gauge flavor profiles and contributes to our community's collective culinary wisdom.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>How does the "Map the Flavor" feature work?</strong>
+                        <p>
+                            "Map the Flavor" is an exciting interactive world map located in our "Features" section. By clicking on different regions or countries on the map, you can instantly discover recipes originating from or inspired by that specific geographical area. It's your visual passport to exploring global cuisines by destination.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>What is the "Craving Compass"?</strong>
+                        <p>
+                            The "Craving Compass" is a fun, interactive tool designed for those moments when you're unsure what to cook. Located in our "Features" section, you can "spin" the compass to receive a surprise global dish recommendation based on your mood or a randomly selected flavor profile. It's perfect for adventurous cooks seeking new culinary experiences.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>How do I earn badges with the "Flavor Passport Progress Tracker"?</strong>
+                        <p>
+                            The "Flavor Passport Progress Tracker" is a gamified feature that rewards your culinary exploration. As you cook and rate recipes from different global regions, you'll automatically earn digital badges. These badges track your progress across continents and cuisines, celebrating your journey as a true culinary explorer.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Can I share recipes from LOSTINFLAVOR on social media?</strong>
+                        <p>
+                            Yes, we encourage you to share your favorite LOSTINFLAVOR recipes! Each recipe page includes social media sharing buttons that allow you to easily post links to Facebook, Instagram, Pinterest, and other platforms. Spread the culinary wanderlust and inspire your friends and followers to get lost in flavor!
+                        </p>
+                    </li>
+                    <li>
+                        <strong>What kind of content can I find on the LOSTINFLAVOR blog?</strong>
+                        <p>
+                            Our blog, "The LOSTINFLAVOR Blog," goes beyond recipes to offer deeper dives into culinary stories, travel adventures, ingredient spotlights, and the philosophy behind global eating. You'll find articles on spice market secrets, fermentation techniques, street food guides, sustainable eating, and much more to enrich your culinary knowledge.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>How do I subscribe to the LOSTINFLAVOR newsletter?</strong>
+                        <p>
+                            You can subscribe to our newsletter by entering your email address in the designated signup form, usually found in the footer of our website or on our homepage. Our newsletter delivers the latest recipes, blog posts, culinary tips, and exclusive offers directly to your inbox, ensuring you never miss a flavor adventure.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>What are the future plans for the LOSTINFLAVOR Marketplace?</strong>
+                        <p>
+                            The LOSTINFLAVOR Marketplace is an exciting upcoming feature designed to provide curated global spice kits, unique cooking essentials, and downloadable culinary guides. We aim to offer high-quality products that complement your global cooking journey. Stay tuned to our announcements for its official launch and product offerings.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>How do I report an issue with the website?</strong>
+                        <p>
+                            If you encounter any technical issues, broken links, or display problems on the website, please use the contact form above or email us directly at info@lostinflavor.com. Provide as much detail as possible, including the page URL, your browser type, and a description of the issue, so we can assist you efficiently.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>What is LOSTINFLAVOR's policy on dietary restrictions and allergies?</strong>
+                        <p>
+                            While we provide general dietary information and allergen warnings where possible, we strongly advise individuals with allergies or specific dietary restrictions to exercise caution. Always review the ingredient list carefully and consult with a healthcare professional or registered dietitian for personalized advice before consuming any recipe from our site.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Can I use LOSTINFLAVOR recipes for commercial purposes?</strong>
+                        <p>
+                            No, the recipes and content on LOSTINFLAVOR.com are provided for personal, non-commercial use only. Commercial use, reproduction, or distribution of our content without explicit written permission from LOSTINFLAVOR is strictly prohibited and may result in legal action.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>How can I provide feedback on a specific recipe?</strong>
+                        <p>
+                            We welcome your feedback! Each recipe page has a comment section where you can share your thoughts, tips, and experiences after trying the dish. You can also use the "Flavor Reactions" to give quick feedback. For more detailed feedback, you can use the contact form above.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>What is the best way to contact customer support?</strong>
+                        <p>
+                            For all customer support inquiries, including account issues, technical problems, or general questions, the most efficient way to reach us is by using the contact form provided at the top of this page. You can also email us directly at info@lostinflavor.com. We aim to respond within 24-48 business hours.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Are the images on LOSTINFLAVOR original?</strong>
+                        <p>
+                            Many of the images on LOSTINFLAVOR are original photography created by our culinary team to provide a rich, sensory experience. We also use licensed stock photography where appropriate, ensuring all visual content aligns with our brand essence and legal requirements. We strive for high-quality, inspiring visuals.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>How do I reset my LOSTINFLAVOR account password?</strong>
+                        <p>
+                            If you've forgotten your password, navigate to the login page and click on the "Forgot Password" link. You will be prompted to enter your registered email address, and a link to reset your password will be sent to your inbox. Follow the instructions in the email to create a new password.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Can I delete my LOSTINFLAVOR account?</strong>
+                        <p>
+                            Yes, you have the option to delete your LOSTINFLAVOR account. To initiate the account deletion process, please contact our support team using the contact form or email us directly. We will guide you through the necessary steps and confirm the deletion of your personal data in accordance with our Privacy Policy.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>How do I update my profile information?</strong>
+                        <p>
+                            You can update your profile information, such as your name or email address, by logging into your LOSTINFLAVOR account and navigating to your "Profile Settings" or "Account Dashboard." Ensure your information is kept current to receive personalized content and communications effectively.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>What are the terms of service for using the site?</strong>
+                        <p>
+                            Our comprehensive Terms of Service outline the rules and guidelines for using LOSTINFLAVOR.com, including user conduct, intellectual property rights, disclaimers, and limitations of liability. You can find the full document by clicking on the "Terms of Service" link in our footer. We encourage all users to read it carefully.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Where can I find the Privacy Policy?</strong>
+                        <p>
+                            Our Privacy Policy details how we collect, use, disclose, and safeguard your personal information. It's crucial for understanding your data rights. You can access the full Privacy Policy document by clicking on the "Privacy Policy" link located in the footer of every page on our website.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Does LOSTINFLAVOR offer cooking classes or workshops?</strong>
+                        <p>
+                            While we currently focus on providing high-quality recipes and culinary content through our website, we are always exploring new ways to engage our community. Future plans may include online cooking classes, virtual workshops, or partnerships with culinary experts. Stay tuned to our blog and social media for updates on such initiatives.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>How can I collaborate with LOSTINFLAVOR?</strong>
+                        <p>
+                            We are open to collaborations with food bloggers, culinary experts, photographers, and travel enthusiasts who align with our brand essence. If you have a partnership proposal or a unique idea for collaboration, please reach out to us via the contact form, clearly outlining your proposal and how it aligns with LOSTINFLAVOR's mission.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Are there any mobile apps for LOSTINFLAVOR?</strong>
+                        <p>
+                            Currently, LOSTINFLAVOR.com is optimized for a seamless mobile web experience, allowing you to access all our content directly from your smartphone or tablet browser. We are continuously evaluating the development of dedicated mobile applications to enhance user experience further. Any updates on app availability will be announced on our platforms.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>How do you ensure recipe authenticity?</strong>
+                        <p>
+                            Our team is dedicated to researching and testing recipes to ensure authenticity and accuracy, often drawing from traditional sources, culinary experts, and cultural insights. While variations exist in every cuisine, we strive to present recipes that honor their origins and deliver genuine global flavors. We also welcome community feedback to refine our content.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Can I leave comments on blog posts?</strong>
+                        <p>
+                            Yes, we encourage active engagement on our blog! Each blog post has a comment section where you can share your thoughts, ask questions, and interact with other readers and our content creators. We foster a respectful and constructive environment for discussion, so please adhere to our user conduct guidelines when commenting.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>What is the "About Us" section about?</strong>
+                        <p>
+                            The "About Us" section provides insight into LOSTINFLAVOR's brand essence, mission, and the passion behind our platform. It explains our focus on global, hidden-gem recipes, our visual storytelling approach, and our commitment to inspiring culinary curiosity and experimentation. You can find it linked in the header and footer of our website.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>How do I report inappropriate content or users?</strong>
+                        <p>
+                            If you encounter any content or user behavior that violates our Terms of Service, such as offensive language, harassment, or spam, please report it to us immediately. You can use the contact form or email us directly at info@lostinflavor.com. Please provide relevant details and screenshots if possible to help us investigate promptly.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Are there any job opportunities at LOSTINFLAVOR?</strong>
+                        <p>
+                            LOSTINFLAVOR is a growing platform, and we occasionally have opportunities for talented individuals passionate about food, travel, and digital content. Any open positions will be advertised on our "About Us" page or through professional networking sites. We encourage you to check periodically for updates on career opportunities.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>How can I stay updated on new features and announcements?</strong>
+                        <p>
+                            The best ways to stay updated on new features, special announcements, and exciting culinary campaigns are to subscribe to our newsletter and follow us on our social media channels (Facebook, Instagram, Pinterest). We regularly post updates and engage with our community through these platforms.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>What kind of support do you offer for recipe troubleshooting?</strong>
+                        <p>
+                            If you're having trouble with a specific recipe, we recommend first checking the comments section on that recipe page, as other users might have similar questions or helpful tips. You can also post your query there. For more direct assistance, you can use our contact form, providing details about the issue you encountered.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Is LOSTINFLAVOR accessible to users with disabilities?</strong>
+                        <p>
+                            We are committed to making LOSTINFLAVOR accessible to as many users as possible. We strive to adhere to web accessibility standards (WCAG) in our design and development. If you encounter any accessibility barriers while using our site, please contact us with details so we can work to improve your experience.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Can I request a specific recipe or cuisine?</strong>
+                        <p>
+                            While we can't guarantee that all requests will be fulfilled, we absolutely love hearing your suggestions for new recipes or cuisines you'd like to see featured on LOSTINFLAVOR. Use the contact form to submit your ideas, and our culinary team will consider them for future content development.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>What is the difference between "Craving Type" and "Mood" in exploration?</strong>
+                        <p>
+                            "Craving Type" focuses on the dominant flavor profile you desire (e.g., spicy, sweet, tangy), while "Mood" relates to the overall experience or context of the meal (e.g., adventure, comfort, quick bite, deep dive). Both allow for unique ways to discover recipes tailored to your current preference.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>How do you select "Hidden Gems of Global Cuisine"?</strong>
+                        <p>
+                            Our "Hidden Gems" are carefully selected by our culinary experts based on extensive research into lesser-known regional dishes, unique preparation methods, and ingredients that offer a truly authentic and adventurous taste experience. We aim to bring you flavors that go beyond the commonly recognized international dishes.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Are there any community guidelines for user interactions?</strong>
+                        <p>
+                            Yes, we have community guidelines outlined within our Terms of Service to ensure a positive and respectful environment for all users. These guidelines cover appropriate behavior, content standards, and interaction etiquette. We encourage everyone to review them to contribute constructively to our culinary community.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Do you offer a print-friendly version of recipes?</strong>
+                        <p>
+                            We understand the need for print-friendly recipes in the kitchen. While a dedicated print button may be integrated in future updates, most modern browsers offer a "Print" option in their menu (usually Ctrl+P or Cmd+P) that will format the recipe page for printing, minimizing unnecessary elements.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>How can I provide feedback on the website's design or user experience?</strong>
+                        <p>
+                            Your feedback on the website's design and user experience is highly valued! We are constantly striving to improve our platform. Please use the contact form to share your suggestions, whether it's about navigation, visual elements, or overall usability. Specific examples are always helpful.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>What if I have a business inquiry or partnership opportunity?</strong>
+                        <p>
+                            For all business inquiries, advertising opportunities, or potential partnerships, please use the contact form and select a subject line that clearly indicates the nature of your inquiry. You can also email us directly at info@lostinflavor.com. We look forward to exploring mutually beneficial collaborations.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Are there any premium features or subscriptions?</strong>
+                        <p>
+                            Currently, LOSTINFLAVOR offers all its core recipe and blog content for free. We are exploring premium features and subscription models for the future, which might include exclusive content, advanced tools, or ad-free experiences. Any such offerings will be announced with full details well in advance.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>How do you handle copyright for user-generated content?</strong>
+                        <p>
+                            When you submit user-generated content, you retain ownership of your intellectual property rights. However, by posting, you grant LOSTINFLAVOR a broad license to use, reproduce, and distribute that content on our platform as outlined in our Terms of Service. This allows us to feature and share your contributions within our community.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>What are the technical requirements to use LOSTINFLAVOR.com?</strong>
+                        <p>
+                            LOSTINFLAVOR.com is designed to be compatible with modern web browsers (e.g., Chrome, Firefox, Safari, Edge) on desktop, tablet, and mobile devices. Ensure your browser is up-to-date for the best experience. A stable internet connection is also recommended for optimal performance and loading of rich media content.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Can I translate the recipes into other languages?</strong>
+                        <p>
+                            While LOSTINFLAVOR primarily publishes content in English, many web browsers offer built-in translation features that can automatically translate web pages into various languages. You can typically find this option in your browser's settings or by right-clicking on the page. We are exploring multi-language support for the future.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>How can I report a broken link or missing image?</strong>
+                        <p>
+                            We strive to keep our site error-free, but sometimes issues occur. If you encounter a broken link, a missing image, or any other content display error, please report it to us immediately via the contact form. Include the specific page URL and a description of the issue so we can fix it promptly.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>What is the process for content moderation on comments and forums?</strong>
+                        <p>
+                            We employ a content moderation process to ensure that comments and forum discussions remain respectful, relevant, and adhere to our community guidelines. While we encourage open dialogue, content that is offensive, spammy, or violates our Terms of Service may be removed. We aim to balance free expression with a positive user experience.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>How can I learn more about the cultural background of a dish?</strong>
+                        <p>
+                            Each recipe page on LOSTINFLAVOR includes an "Origin Story" section that provides a quick cultural background of the dish, its historical context, and its significance. Additionally, our blog often features in-depth articles that delve into the rich cultural narratives behind various global cuisines and ingredients.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Does LOSTINFLAVOR offer gift cards for its marketplace?</strong>
+                        <p>
+                            As the LOSTINFLAVOR Marketplace is still in development, specific features like gift cards are being considered for future implementation. We aim to provide convenient and exciting options for sharing the gift of global flavors. Please check our marketplace section and announcements for updates on gift card availability.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>How can I request a recipe adaptation for specific dietary needs?</strong>
+                        <p>
+                            While we cannot provide personalized recipe adaptations for every dietary need due to the volume of requests, we encourage you to use the comment sections on recipe pages to ask about potential modifications. Our community and team may offer helpful suggestions. For specific health concerns, always consult a professional.
+                        </p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#explore">Explore Recipes</a></li>
+                        <li><a href="index.html#features">Interactive Features</a></li>
+                        <li><a href="index.html#marketplace">Marketplace</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect With Us</h4>
+                    <ul>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Pinterest</a></li>
+                        <li><a href="#">Newsletter Signup</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="#">Accessibility Statement</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <p class="address">
+                LOSTINFLAVOR Headquarters<br>
+                123 Global Flavors Lane<br>
+                Culinary City, Delhi, 110001<br>
+                India<br>
+                Email: info@lostinflavor.com<br>
+                Phone: +91-1234567890
+            </p>
+            <p>&copy; 2025 LOSTINFLAVOR. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOSTINFLAVOR - Cookie Policy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        /* Color Palette - Consistent with LOSTINFLAVOR brand */
+        :root {
+            --spice-red: #D84315;
+            --midnight-charcoal: #212121;
+            --sandstone-cream: #FAF3E0;
+            --herb-green: #81C784;
+            --golden-curry: #FFB300;
+        }
+
+        /* General Styling */
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--sandstone-cream);
+            color: var(--midnight-charcoal);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--midnight-charcoal);
+        }
+
+        a {
+            color: var(--spice-red);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--golden-curry);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header & Navigation - Consistent with previous pages */
+        header {
+            background-color: var(--midnight-charcoal);
+            color: var(--sandstone-cream);
+            padding: 15px 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        header .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5em;
+            font-weight: bold;
+            color: var(--spice-red);
+            margin-bottom: 5px;
+        }
+
+        header .tagline {
+            font-size: 1.2em;
+            color: var(--sandstone-cream);
+            margin-bottom: 15px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: var(--sandstone-cream);
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active { /* Added active state for current page */
+            background-color: var(--spice-red);
+            color: var(--sandstone-cream);
+        }
+
+        /* Cookie Policy Content Styling */
+        .cookies-content {
+            padding: 60px 0;
+        }
+
+        .cookies-content h1 {
+            text-align: center;
+            font-size: 3em;
+            margin-bottom: 40px;
+            color: var(--spice-red);
+        }
+
+        .cookies-content h2 {
+            font-size: 2.2em;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            color: var(--midnight-charcoal);
+            border-bottom: 2px solid var(--golden-curry);
+            padding-bottom: 10px;
+        }
+
+        .cookies-content h3 {
+            font-size: 1.8em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: var(--spice-red);
+        }
+
+        .cookies-content p {
+            margin-bottom: 15px;
+            font-size: 1.05em;
+            line-height: 1.7;
+        }
+
+        .cookies-content ol, .cookies-content ul {
+            list-style-type: decimal;
+            padding-left: 30px;
+            margin-bottom: 20px;
+        }
+
+        .cookies-content ol li, .cookies-content ul li {
+            margin-bottom: 15px;
+            line-height: 1.7;
+            font-size: 1.05em;
+        }
+
+        .cookies-content ol ol, .cookies-content ul ul {
+            list-style-type: lower-alpha;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding-left: 25px;
+        }
+
+        .cookies-content strong {
+            color: var(--midnight-charcoal);
+        }
+
+        /* Cookie Consent Dialogue Box */
+        .cookie-consent-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--midnight-charcoal);
+            color: var(--sandstone-cream);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
+            z-index: 1000;
+            text-align: center;
+            transform: translateY(100%); /* Start off-screen */
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .cookie-consent-banner.show {
+            transform: translateY(0); /* Slide in */
+        }
+
+        .cookie-consent-banner p {
+            margin-bottom: 15px;
+            font-size: 1em;
+            max-width: 900px;
+        }
+
+        .cookie-consent-banner .consent-buttons button {
+            background-color: var(--spice-red);
+            color: var(--sandstone-cream);
+            border: none;
+            padding: 10px 25px;
+            margin: 0 10px;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            font-size: 0.95em;
+        }
+
+        .cookie-consent-banner .consent-buttons button:hover {
+            background-color: var(--golden-curry);
+            transform: translateY(-2px);
+        }
+
+        /* Footer - Consistent with previous pages */
+        footer {
+            background-color: var(--midnight-charcoal);
+            color: var(--sandstone-cream);
+            padding: 40px 0;
+            text-align: center;
+            font-size: 0.9em;
+            margin-top: 50px;
+        }
+
+        footer .footer-content {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        footer .footer-section {
+            flex: 1;
+            min-width: 250px;
+            padding: 0 15px;
+        }
+
+        footer .footer-section h4 {
+            color: var(--spice-red);
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        footer .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        footer .footer-section ul li {
+            margin-bottom: 8px;
+        }
+
+        footer .footer-section ul li a {
+            color: var(--sandstone-cream);
+            transition: color 0.3s ease;
+        }
+
+        footer .footer-section ul li a:hover {
+            color: var(--golden-curry);
+        }
+
+        footer .address {
+            margin-top: 20px;
+            line-height: 1.8;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .cookies-content h1 {
+                font-size: 2.2em;
+            }
+            .cookies-content h2 {
+                font-size: 1.8em;
+            }
+            .cookies-content h3 {
+                font-size: 1.4em;
+            }
+            nav ul {
+                flex-direction: column;
+            }
+            nav ul li {
+                margin: 10px 0;
+            }
+            footer .footer-content {
+                flex-direction: column;
+            }
+            footer .footer-section {
+                margin-bottom: 20px;
+            }
+            .cookie-consent-banner {
+                padding: 15px;
+            }
+            .cookie-consent-banner .consent-buttons button {
+                margin: 5px 0;
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">LOSTINFLAVOR</div>
+            <p class="tagline">Recipes Beyond Borders. Find Your Next Craving.</p>
+            <nav>
+                <ul>
+                   <li><a href="index.html">Home</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li><a href="terms.html">Terms</a></li>
+                    <li><a href="cookies.html">Cookies</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="cookies-content">
+            <div class="container">
+                <h1>Our Cookie Policy</h1>
+                <p><strong>Effective Date: July 3, 2025</strong></p>
+                <p>
+                    This Cookie Policy explains what cookies are, how LOSTINFLAVOR.com ("the Site," "we," "us," or "our") uses cookies and similar technologies, and your choices regarding cookies. By continuing to use our Site, you are agreeing to our use of cookies in accordance with this policy. If you do not agree to the use of cookies, please adjust your browser settings or refrain from using the Site.
+                </p>
+                <p>
+                    We may update this Cookie Policy from time to time to reflect changes in our practices or for other operational, legal, or regulatory reasons. We encourage you to review this policy periodically to stay informed about our use of cookies.
+                </p>
+
+                <h2>1. What Are Cookies?</h2>
+                <p>
+                    Cookies are small text files that are placed on your computer or mobile device when you visit a website. They are widely used to make websites work, or work more efficiently, as well as to provide reporting information. Cookies allow a website to recognize a user's device and remember information about their preferences or past actions.
+                </p>
+                <ol>
+                    <li>
+                        <strong>Definition and Purpose:</strong>
+                        <p>
+                            Cookies are essentially tiny digital identifiers that websites send to your browser. Their primary purpose is to store small pieces of information on your device, which can then be retrieved by the website on subsequent visits. This allows websites to "remember" you, personalize your experience, and make browsing more efficient by recalling preferences, login states, and other user-specific settings. They are fundamental to the modern web experience, enabling features like shopping carts and personalized content.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>How They Work:</strong>
+                        <p>
+                            When you load a website, the server sends a cookie to your browser. Your browser stores this cookie. The next time you visit that same website, your browser sends the cookie back to the server. This exchange allows the server to recognize your device and retrieve any stored information related to your previous interactions. This seamless process occurs in the background, enhancing your user journey without requiring repetitive inputs.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>First-Party vs. Third-Party Cookies:</strong>
+                        <p>
+                            First-party cookies are set by the website you are visiting (e.g., LOSTINFLAVOR.com). They are typically used to remember your preferences for that specific site. Third-party cookies are set by a domain other than the one you are visiting, often by advertisers or analytics providers, and are used for tracking across different websites. Understanding this distinction helps you manage your privacy settings more effectively.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Session vs. Persistent Cookies:</strong>
+                        <p>
+                            Session cookies are temporary and are erased when you close your web browser. They are used to track your activities during a single browsing session. Persistent cookies, on the other hand, remain on your device for a set period or until you manually delete them. These are used to remember your preferences over longer periods, such as keeping you logged in or remembering your language choice.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Cookie Data Storage:</strong>
+                        <p>
+                            Cookies typically store non-personally identifiable information, such as a unique ID, site settings, or browsing history. While they don't directly contain your name or email, they can be linked to other data to build a profile. It's important to understand what data is being stored and how it might be used in conjunction with other information.
+                        </p>
+                    </li>
+                </ol>
+
+                <h2>2. How We Use Cookies</h2>
+                <p>
+                    LOSTINFLAVOR uses cookies for various purposes to enhance your experience, analyze site performance, and deliver relevant content.
+                </p>
+                <ol start="6">
+                    <li>
+                        <strong>Essential Website Functionality:</strong>
+                        <p>
+                            Some cookies are absolutely necessary for the Site to function correctly. These include cookies that enable secure login, allow you to navigate between pages, and use core features like saving recipes to your "Global Cravings List." Without these cookies, certain services you request cannot be provided, making your browsing experience significantly limited.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Personalization and Preferences:</strong>
+                        <p>
+                            We use cookies to remember your preferences and settings, such as your preferred language, display settings, or recently viewed recipes. This allows us to personalize your experience, so you don't have to re-enter the same information every time you visit. It makes your culinary journey on LOSTINFLAVOR more efficient and tailored to your tastes.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Site Performance and Analytics:</strong>
+                        <p>
+                            Performance cookies collect information about how visitors use our Site, such as which pages are visited most often and if users encounter error messages. This data is aggregated and anonymous, helping us understand and improve the performance and usability of the Site. We analyze trends to optimize content delivery and site structure.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>User Experience Improvement:</strong>
+                        <p>
+                            By analyzing how users interact with our features (e.g., "Map the Flavor," "Craving Compass"), we can identify areas for improvement and develop new functionalities that enhance your overall engagement. Cookies provide valuable insights into user behavior patterns, allowing us to continuously refine and innovate our platform for a better culinary exploration.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Security and Fraud Prevention:</strong>
+                        <p>
+                            Certain cookies play a vital role in maintaining the security of our Site and protecting against fraudulent activities. They help us identify and prevent unauthorized access to accounts, detect malicious behavior, and ensure the integrity of our systems. These security measures are crucial for safeguarding both your data and our platform.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Marketing and Advertising:</strong>
+                        <p>
+                            We use cookies to deliver advertisements that are more relevant to you and your interests. They also help us measure the effectiveness of advertising campaigns and limit the number of times you see a particular advertisement. This allows us to provide a more tailored advertising experience while respecting your browsing habits.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Social Media Integration:</strong>
+                        <p>
+                            Cookies may be set by social media services that we have added to the Site to enable you to share our content with your friends and networks. These cookies are capable of tracking your browser across other sites and building up a profile of your interests. This may impact the content and messages you see on other websites you visit.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>A/B Testing and Feature Rollouts:</strong>
+                        <p>
+                            We sometimes use cookies to conduct A/B tests, which involve showing different versions of a page or feature to different users to see which performs better. This allows us to make data-driven decisions about design and functionality improvements, ensuring that new features enhance the user experience effectively.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Load Balancing:</strong>
+                        <p>
+                            In some cases, cookies are used for load balancing, which helps distribute network traffic across multiple servers. This ensures that the Site remains stable and responsive, even during periods of high user activity, preventing slowdowns and service interruptions for a consistent browsing experience.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Geolocation Services:</strong>
+                        <p>
+                            If you grant permission, some cookies may be used in conjunction with your device's location services to provide location-specific content, such as suggesting recipes popular in your region or local ingredient sourcing tips. This enhances the relevance of the content you receive, making your culinary journey more localized.
+                        </p>
+                    </li>
+                </ol>
+
+                <h2>3. Types of Cookies We Use</h2>
+                <p>
+                    LOSTINFLAVOR utilizes various categories of cookies to provide and improve our services.
+                </p>
+                <ol start="16">
+                    <li>
+                        <strong>Strictly Necessary Cookies:</strong>
+                        <p>
+                            These cookies are essential for you to browse the Site and use its features, such as accessing secure areas of the website. Without these cookies, services like user login, shopping carts, or e-billing cannot be provided. They are fundamental to the basic operation of LOSTINFLAVOR.com and cannot be turned off in our systems.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Performance Cookies:</strong>
+                        <p>
+                            These cookies collect information about how visitors use a website, for instance, which pages visitors go to most often, and if they get error messages from web pages. These cookies don't collect information that identifies a visitor. All information these cookies collect is aggregated and therefore anonymous. It is only used to improve how a website works.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Functionality Cookies:</strong>
+                        <p>
+                            Functionality cookies allow the website to remember choices you make (such as your user name, language, or the region you are in) and provide enhanced, more personal features. For instance, a website may be able to provide you with local weather reports or traffic news by storing in a cookie the region in which you are currently located. They can also be used to remember changes you have made to text size, fonts, and other parts of web pages that you can customize.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Targeting/Advertising Cookies:</strong>
+                        <p>
+                            These cookies are used to deliver advertisements more relevant to you and your interests. They are also used to limit the number of times you see an advertisement as well as help measure the effectiveness of the advertising campaign. They are usually placed by advertising networks with the website operator’s permission. They remember that you have visited a website and this information is shared with other organizations such as advertisers.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Analytics Cookies:</strong>
+                        <p>
+                            Specifically, these are a subset of performance cookies used to gather data on how users interact with the Site. This includes tracking page views, session duration, referral sources, and bounce rates. Tools like Google Analytics fall into this category, providing us with insights to optimize content and user flow, ultimately enhancing your browsing experience.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Social Media Cookies:</strong>
+                        <p>
+                            These cookies are set by social media services that we have added to the Site to enable you to share our content with your friends and networks. They are capable of tracking your browser across other sites and building up a profile of your interests. This may impact the content and messages you see on other websites you visit.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Security Cookies:</strong>
+                        <p>
+                            These cookies are vital for the security of our Site. They help to detect and prevent malicious activities, such as brute-force attacks, unauthorized access attempts, and other forms of cyber threats. By identifying suspicious patterns, these cookies contribute to a safer browsing environment for all LOSTINFLAVOR users.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Preference Cookies:</strong>
+                        <p>
+                            These cookies are used to store your preferences and settings on the Site, such as your chosen language, currency, or unit of measurement for recipes. They ensure that your customized settings are remembered across sessions, providing a consistent and convenient user experience without requiring repetitive adjustments.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Authentication Cookies:</strong>
+                        <p>
+                            When you log into your LOSTINFLAVOR account, authentication cookies are used to verify your identity and keep you logged in as you navigate through the Site. This eliminates the need to re-enter your credentials on every page, streamlining your access to personalized features and content.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Cookie Consent Cookies:</strong>
+                        <p>
+                            Ironically, a cookie is used to remember your cookie consent preferences. Once you accept or decline cookies via our banner, a specific cookie is set to store this choice, preventing the banner from reappearing on every subsequent visit for a specified period. This ensures a smoother and less intrusive user experience.
+                        </p>
+                    </li>
+                </ol>
+
+                <h2>4. Third-Party Cookies</h2>
+                <p>
+                    In addition to our own cookies, we may also use various third-parties cookies to report usage statistics of the Service, deliver advertisements on and through the Service, and so on.
+                </p>
+                <ol start="26">
+                    <li>
+                        <strong>Google Analytics Cookies:</strong>
+                        <p>
+                            We use Google Analytics, a web analytics service provided by Google, Inc., which uses cookies to help us analyze how users use the Site. The information generated by the cookie about your use of the Site (including your IP address) will be transmitted to and stored by Google on servers in the United States. Google will use this information for the purpose of evaluating your use of the Site, compiling reports on Site activity for us, and providing other services relating to Site activity and internet usage.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Advertising Network Cookies:</strong>
+                        <p>
+                            Third-party advertising networks, such as Google AdSense or other programmatic advertising partners, may place cookies on your device to collect information about your browsing habits across various websites. This data is used to build a profile of your interests and serve you more relevant advertisements both on LOSTINFLAVOR.com and on other sites you visit.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Social Media Platform Cookies:</strong>
+                        <p>
+                            When you use social media sharing buttons (e.g., Facebook "Like" button, Pinterest "Pin It" button) or log in via social media accounts, the respective social media platform may set cookies on your device. These cookies allow the social media platform to track your activity on our Site and potentially link it to your social media profile for advertising and analytics purposes.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Embedded Content Cookies:</strong>
+                        <p>
+                            If we embed content from third-party services (e.g., YouTube videos, Instagram feeds) on our Site, these third-party services may set their own cookies. These cookies are controlled by the respective third parties and are subject to their own cookie policies. We recommend reviewing the policies of these providers if you have concerns.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Affiliate Marketing Cookies:</strong>
+                        <p>
+                            LOSTINFLAVOR may participate in affiliate marketing programs, which use cookies to track referrals from our Site to partner websites. These cookies are essential for us to receive commissions on qualifying purchases made through our referral links, helping to support the free content we provide. They do not collect personal identifying information.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Customer Support Chat Cookies:</strong>
+                        <p>
+                            If we implement third-party live chat or customer support widgets, these services may use cookies to maintain your chat session, remember your preferences, or link your current interaction to past conversations. This ensures a continuous and personalized support experience when you reach out for assistance.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Content Delivery Network (CDN) Cookies:</strong>
+                        <p>
+                            CDNs are used to deliver website content more efficiently by caching it closer to your location. While not always used for tracking, some CDN providers may use cookies for performance optimization, security, or to manage content delivery, ensuring faster loading times for images and other assets.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>A/B Testing Tool Cookies:</strong>
+                        <p>
+                            Third-party A/B testing tools may place cookies to ensure that you consistently see the same version of a test (e.g., a different layout or button color) throughout your browsing session. This allows for accurate measurement of user engagement with different site elements, helping us optimize our design.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Payment Gateway Cookies:</strong>
+                        <p>
+                            When you make a purchase on our future marketplace, the third-party payment gateway (e.g., Stripe, PayPal) will set cookies to process your transaction securely. These cookies are crucial for handling payment information, preventing fraud, and ensuring the smooth completion of your purchase.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Security and Anti-Fraud Cookies:</strong>
+                        <p>
+                            Some third-party security services we integrate may use cookies to identify and mitigate security risks, detect bot activity, and prevent fraudulent transactions. These cookies help protect both our platform and our users from various cyber threats and unauthorized access attempts.
+                        </p>
+                    </li>
+                </ol>
+
+                <h2>5. Your Choices Regarding Cookies</h2>
+                <p>
+                    You have the right to decide whether to accept or reject cookies. You can exercise your cookie preferences by adjusting your browser settings.
+                </p>
+                <ol start="36">
+                    <li>
+                        <strong>Browser Settings:</strong>
+                        <p>
+                            Most web browsers allow you to control cookies through their settings preferences. You can typically configure your browser to accept all cookies, reject all cookies, or notify you when a cookie is being sent. The exact steps vary depending on your browser (e.g., Chrome, Firefox, Safari, Edge).
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Opt-Out Tools:</strong>
+                        <p>
+                            You can opt-out of interest-based advertising from many third-party advertising networks through industry opt-out tools such as the Network Advertising Initiative (NAI) Opt-Out Tool or the Digital Advertising Alliance (DAA) Opt-Out Tool. These tools allow you to manage your preferences across multiple advertising providers.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Impact of Disabling Cookies:</strong>
+                        <p>
+                            Please note that if you choose to disable or reject cookies, some parts of our Site may not function properly or may become inaccessible. For example, you might not be able to log in, save recipes, or experience personalized content. Disabling certain cookies can significantly impact your overall browsing experience.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Specific Cookie Management:</strong>
+                        <p>
+                            While global browser settings are an option, some users prefer to manage specific types of cookies. For instance, you might choose to block third-party advertising cookies while still allowing essential and functionality cookies to ensure the Site operates correctly. This granular control offers more flexibility.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Clearing Cookies:</strong>
+                        <p>
+                            You can also delete cookies that have already been placed on your device. This can be done through your browser settings. Clearing cookies will remove any stored preferences and login information, requiring you to re-enter them on subsequent visits to websites.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Consent Withdrawal:</strong>
+                        <p>
+                            If you have previously consented to the use of cookies and wish to withdraw your consent, you can do so by adjusting your browser settings to block or delete cookies. Note that this will not affect the lawfulness of processing based on consent before its withdrawal.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Mobile Device Settings:</strong>
+                        <p>
+                            For mobile devices, you may have options to limit ad tracking in your device settings. For example, on iOS devices, you can enable "Limit Ad Tracking," and on Android devices, you can enable "Opt out of Ads Personalization." These settings can help control how your mobile activity is used for advertising.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Browser Extensions:</strong>
+                        <p>
+                            Various browser extensions are available that offer enhanced cookie management features, allowing you to block, manage, or delete cookies more easily. These tools can provide an additional layer of control over your online privacy.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Regular Review:</strong>
+                        <p>
+                            We recommend regularly reviewing your browser's cookie settings and periodically clearing your cookies to maintain control over your privacy. This proactive approach ensures that your preferences are consistently applied across your browsing activities.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Further Information:</strong>
+                        <p>
+                            For more detailed information about cookies and how to manage them, you can visit external resources such as allaboutcookies.org or your online browser's help section. These resources provide comprehensive guides on various aspects of cookie management.
+                        </p>
+                    </li>
+                </ol>
+
+                <h2>6. Contact Us</h2>
+                <p>
+                    If you have any questions or comments about this Cookie Policy, please contact us at:
+                </p>
+                <p>
+                    LOSTINFLAVOR Headquarters<br>
+                    123 Global Flavors Lane<br>
+                    Culinary City, Delhi, 110001<br>
+                    India<br>
+                    Email: info@lostinflavor.com<br>
+                    Phone: +91-1234567890
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <div class="cookie-consent-banner" id="cookieConsentBanner">
+        <p>We use cookies to enhance your experience, analyze site usage, and personalize content. By clicking "Accept All," you agree to the storing of cookies on your device. For more information, please read our <a href="cookies.html" style="color: var(--golden-curry); text-decoration: underline;">Cookie Policy</a>.</p>
+        <div class="consent-buttons">
+            <button id="acceptCookies">Accept All</button>
+            <button id="declineCookies">Decline</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#explore">Explore Recipes</a></li>
+                        <li><a href="index.html#features">Interactive Features</a></li>
+                        <li><a href="index.html#marketplace">Marketplace</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect With Us</h4>
+                    <ul>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Pinterest</a></li>
+                        <li><a href="#">Newsletter Signup</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="cookies.html">Cookie Policy</a></li>
+                        <li><a href="#">Accessibility Statement</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <p class="address">
+                LOSTINFLAVOR Headquarters<br>
+                123 Global Flavors Lane<br>
+                Culinary City, Delhi, 110001<br>
+                India<br>
+                Email: info@lostinflavor.com<br>
+                Phone: +91-1234567890
+            </p>
+            <p>&copy; 2025 LOSTINFLAVOR. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const cookieBanner = document.getElementById('cookieConsentBanner');
+            const acceptButton = document.getElementById('acceptCookies');
+            const declineButton = document.getElementById('declineCookies');
+
+            // Function to set a cookie
+            function setCookie(name, value, days) {
+                let expires = "";
+                if (days) {
+                    const date = new Date();
+                    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                    expires = "; expires=" + date.toUTCString();
+                }
+                document.cookie = name + "=" + (value || "") + expires + "; path=/";
+            }
+
+            // Function to get a cookie
+            function getCookie(name) {
+                const nameEQ = name + "=";
+                const ca = document.cookie.split(';');
+                for(let i=0; i < ca.length; i++) {
+                    let c = ca[i];
+                    while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+                    if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+                }
+                return null;
+            }
+
+            // Check if cookie consent has been given
+            const consentGiven = getCookie('lostinflavor_cookie_consent');
+
+            if (!consentGiven) {
+                // Show the banner after a short delay to ensure CSS loads
+                setTimeout(() => {
+                    cookieBanner.classList.add('show');
+                }, 500);
+            } else {
+                cookieBanner.style.display = 'none'; // Hide if consent already given
+            }
+
+            // Event listeners for buttons
+            acceptButton.addEventListener('click', function() {
+                setCookie('lostinflavor_cookie_consent', 'accepted', 365); // Consent for 1 year
+                cookieBanner.classList.remove('show');
+                setTimeout(() => {
+                    cookieBanner.style.display = 'none';
+                }, 500); // Hide after transition
+                // You might add logic here to enable tracking scripts
+                console.log('Cookies accepted.');
+            });
+
+            declineButton.addEventListener('click', function() {
+                setCookie('lostinflavor_cookie_consent', 'declined', 365); // Record decline for 1 year
+                cookieBanner.classList.remove('show');
+                setTimeout(() => {
+                    cookieBanner.style.display = 'none';
+                }, 500); // Hide after transition
+                // You might add logic here to disable tracking scripts or limit functionality
+                console.log('Cookies declined.');
+            });
+        });
+    </script>
+</body>
+</html>

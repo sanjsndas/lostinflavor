@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOSTINFLAVOR - Recipes Beyond Borders. Find Your Next Craving.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        /* Color Palette */
+        :root {
+            --spice-red: #D84315;
+            --midnight-charcoal: #212121;
+            --sandstone-cream: #FAF3E0;
+            --herb-green: #81C784;
+            --golden-curry: #FFB300;
+        }
+
+        /* General Styling */
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--sandstone-cream);
+            color: var(--midnight-charcoal);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--midnight-charcoal);
+        }
+
+        /* Specific font for handwritten notes might be loaded separately or simulated with a script font */
+        .handwritten {
+            font-family: 'Pacifico', cursive; /* Example for handwritten style */
+        }
+
+        a {
+            color: var(--spice-red);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--golden-curry);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--midnight-charcoal);
+            color: var(--sandstone-cream);
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        header .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5em;
+            font-weight: bold;
+            color: var(--spice-red);
+            margin-bottom: 5px;
+        }
+
+        header .tagline {
+            font-size: 1.2em;
+            color: var(--sandstone-cream);
+            margin-bottom: 15px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: var(--sandstone-cream);
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: var(--spice-red);
+            color: var(--sandstone-cream);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 600px; /* Adjust height as needed */
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://via.placeholder.com/1920x600/D84315/FAF3E0?text=Global+Cuisine+Collage') no-repeat center center/cover;
+            color: var(--sandstone-cream);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            box-shadow: inset 0 0 50px rgba(0,0,0,0.7);
+        }
+
+        .hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            color: var(--sandstone-cream);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+        }
+
+        .hero p {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+            max-width: 800px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+        }
+
+        .cta-buttons a {
+            display: inline-block;
+            background-color: var(--spice-red);
+            color: var(--sandstone-cream);
+            padding: 15px 30px;
+            margin: 0 10px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+
+        .cta-buttons a:hover {
+            background-color: var(--golden-curry);
+            transform: translateY(-3px);
+        }
+
+        /* Section Styling */
+        section {
+            padding: 60px 0;
+        }
+
+        section h2 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        section h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--spice-red);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        /* Featured Sections */
+        .featured-recipes, .explore-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .recipe-card {
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .recipe-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        .recipe-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .recipe-card-content {
+            padding: 20px;
+        }
+
+        .recipe-card h3 {
+            font-size: 1.8em;
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: var(--spice-red);
+        }
+
+        .recipe-card p {
+            font-size: 0.95em;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .recipe-card .tags span {
+            display: inline-block;
+            background-color: var(--golden-curry);
+            color: var(--midnight-charcoal);
+            font-size: 0.8em;
+            padding: 5px 10px;
+            border-radius: 5px;
+            margin-right: 8px;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .recipe-card .read-more {
+            display: inline-block;
+            background-color: var(--herb-green);
+            color: var(--sandstone-cream);
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-size: 0.9em;
+            transition: background-color 0.3s ease;
+        }
+
+        .recipe-card .read-more:hover {
+            background-color: var(--spice-red);
+        }
+
+        /* Explore Options */
+        .explore-option-card {
+            background-color: var(--midnight-charcoal);
+            color: var(--sandstone-cream);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .explore-option-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.4); /* Overlay for text readability */
+            z-index: 1;
+        }
+
+        .explore-option-card.craving {
+            background: url('https://via.placeholder.com/600x400/FFB300/212121?text=Craving+Type') no-repeat center center/cover;
+        }
+        .explore-option-card.destination {
+            background: url('https://via.placeholder.com/600x400/D84315/FAF3E0?text=Destination+Map') no-repeat center center/cover;
+        }
+        .explore-option-card.mood {
+            background: url('https://via.placeholder.com/600x400/81C784/212121?text=Mood+Setting') no-repeat center center/cover;
+        }
+
+        .explore-option-card h3 {
+            font-size: 2em;
+            color: var(--golden-curry);
+            margin-top: 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .explore-option-card p {
+            color: var(--sandstone-cream);
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .explore-option-card a {
+            background-color: var(--golden-curry);
+            color: var(--midnight-charcoal);
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            position: relative;
+            z-index: 2;
+            transition: background-color 0.3s ease;
+        }
+
+        .explore-option-card a:hover {
+            background-color: var(--spice-red);
+            color: var(--sandstone-cream);
+        }
+
+        /* Interactive Features */
+        .interactive-features {
+            text-align: center;
+        }
+
+        .feature-item {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .feature-item h3 {
+            color: var(--spice-red);
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+
+        .feature-item p {
+            color: #666;
+            font-size: 1.1em;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--midnight-charcoal);
+            color: var(--sandstone-cream);
+            padding: 40px 0;
+            text-align: center;
+            font-size: 0.9em;
+            margin-top: 50px;
+        }
+
+        footer .footer-content {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        footer .footer-section {
+            flex: 1;
+            min-width: 250px;
+            padding: 0 15px;
+        }
+
+        footer .footer-section h4 {
+            color: var(--spice-red);
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        footer .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        footer .footer-section ul li {
+            margin-bottom: 8px;
+        }
+
+        footer .footer-section ul li a {
+            color: var(--sandstone-cream);
+            transition: color 0.3s ease;
+        }
+
+        footer .footer-section ul li a:hover {
+            color: var(--golden-curry);
+        }
+
+        footer .disclaimer-text,
+        footer .customer-satisfaction-text {
+            max-width: 900px;
+            margin: 20px auto;
+            text-align: left;
+            font-size: 0.85em;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+        }
+
+        footer .address {
+            margin-top: 20px;
+            line-height: 1.8;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5em;
+            }
+
+            .hero p {
+                font-size: 1.2em;
+            }
+
+            .cta-buttons a {
+                padding: 12px 25px;
+                font-size: 1em;
+                margin: 5px;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .featured-recipes, .explore-options {
+                grid-template-columns: 1fr;
+            }
+
+            footer .footer-content {
+                flex-direction: column;
+            }
+
+            footer .footer-section {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">LOSTINFLAVOR</div>
+            <p class="tagline">Recipes Beyond Borders. Find Your Next Craving.</p>
+            <nav>
+                <ul>
+                   <li><a href="index.html">Home</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li><a href="terms.html">Terms</a></li>
+                    <li><a href="cookies.html">Cookies</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <h1>Wander the World. One Bite at a Time.</h1>
+            <p>Your Passport to Bold, Untamed Flavor. Dive into global kitchens, street corners, and hidden flavor zones.</p>
+            <div class="cta-buttons">
+                <a href="#explore">Explore Recipes</a>
+                <a href="#craving-compass">Choose by Craving</a>
+                <a href="#map-flavor">Map the Flavor</a>
+            </div>
+        </section>
+
+        <section id="featured">
+            <div class="container">
+                <h2>Featured Global Delights</h2>
+                <div class="featured-recipes">
+                    <div class="recipe-card">
+                        <img src="p1.avif" alt="Moroccan Lamb Tagine">
+                        <div class="recipe-card-content">
+                            <h3>Moroccan Lamb Tagine with Prunes & Almonds</h3>
+                            <p>A fragrant and tender tagine, slow-cooked to perfection, bringing the authentic flavors of Morocco to your table.</p>
+                            <div class="tags">
+                                <span>#Comforting</span>
+                                <span>#African</span>
+                                <span>#SlowCook</span>
+                            </div>
+                            <a href="#" class="read-more">View Recipe</a>
+                        </div>
+                    </div>
+
+                    <div class="recipe-card">
+                        <img src="p2.webp" alt="Authentic Thai Green Curry">
+                        <div class="recipe-card-content">
+                            <h3>Authentic Thai Green Curry (Gaeng Keow Wan Gai)</h3>
+                            <p>Experience the vibrant, spicy, and aromatic delight of a classic Thai green curry, bursting with fresh herbs.</p>
+                            <div class="tags">
+                                <span>#Spicy</span>
+                                <span>#Asian</span>
+                                <span>#QuickBite</span>
+                            </div>
+                            <a href="#" class="read-more">View Recipe</a>
+                        </div>
+                    </div>
+
+                    <div class="recipe-card">
+                        <img src="p3.avif" alt="Mexican Street Tacos">
+                        <div class="recipe-card-content">
+                            <h3>Al Pastor Tacos: Mexico City Street Food</h3>
+                            <p>Savor the iconic flavors of thinly sliced marinated pork, pineapple, and fresh cilantro in this street food classic.</p>
+                            <div class="tags">
+                                <span>#Tangy</span>
+                                <span>#LatinAmerican</span>
+                                <span>#StreetEat</span>
+                            </div>
+                            <a href="#" class="read-more">View Recipe</a>
+                        </div>
+                    </div>
+
+                    <div class="recipe-card">
+                        <img src="p4.webp" alt="Hyderabadi Chicken Biryani">
+                        <div class="recipe-card-content">
+                            <h3>Hyderabadi Chicken Biryani: A Royal Feast</h3>
+                            <p>Layers of fragrant basmati rice and succulent chicken, slow-cooked with a symphony of spices – a true Indian culinary masterpiece.</p>
+                            <div class="tags">
+                                <span>#Comforting</span>
+                                <span>#Spicy</span>
+                                <span>#DeepDive</span>
+                            </div>
+                            <a href="#" class="read-more">View Recipe</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="explore">
+            <div class="container">
+                <h2>Explore By:</h2>
+                <div class="explore-options">
+                    <div class="explore-option-card craving">
+                        <h3>Craving Type</h3>
+                        <p>Are you yearning for spicy, sweet, comforting, or tangy? Let your palate guide you.</p>
+                        <a href="#">Explore Cravings</a>
+                    </div>
+                    <div class="explore-option-card destination">
+                        <h3>Destination</h3>
+                        <p>Journey through the street eats of Bangkok, the coastal dishes of the Mediterranean, or hidden Latin American classics.</p>
+                        <a href="#">Map Destinations</a>
+                    </div>
+                    <div class="explore-option-card mood">
+                        <h3>Mood</h3>
+                        <p>Whether it's an adventure meal, cozy global comfort, or a quick bite for busy explorers, we have a recipe for your mood.</p>
+                        <a href="#">Find by Mood</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features">
+            <div class="container interactive-features">
+                <h2>Unlock Your Culinary Journey</h2>
+                <div class="featured-recipes"> <div class="feature-item">
+                        <h3>Map the Flavor</h3>
+                        <p>Clickable world map to discover recipes by region. Pin your culinary travels!</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>Craving Compass</h3>
+                        <p>Spin for surprise global dishes based on your current mood or desired flavor profile.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>Flavor Passport</h3>
+                        <p>Earn badges as you cook recipes from different regions. Collect them all!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="marketplace">
+            <div class="container">
+                <h2>The LOSTINFLAVOR Marketplace (Coming Soon!)</h2>
+                <p style="text-align: center; font-size: 1.1em; max-width: 800px; margin: 0 auto 40px;">
+                    Beyond recipes, LOSTINFLAVOR envisions a world where you can access the very tools and ingredients that bring global flavors to life. We're curating a collection designed to enhance your culinary adventures.
+                </p>
+
+                <div class="featured-recipes"> <div class="recipe-card">
+                        <img src="p5.webp" alt="Global Spice Kits">
+                        <div class="recipe-card-content">
+                            <h3>Global Spice Kits</h3>
+                            <p>Curated spice blends for specific destinations, bringing authentic aromas right to your kitchen.</p>
+                        </div>
+                    </div>
+                    <div class="recipe-card">
+                        <img src="p6.avif" alt="Cooking Essentials">
+                        <div class="recipe-card-content">
+                            <h3>LOSTINFLAVOR Cooking Essentials</h3>
+                            <p>Bold aprons, travel-inspired utensils, and kitchen tools designed for adventurous home cooks.</p>
+                        </div>
+                    </div>
+                    <div class="recipe-card">
+                        <img src="p7.webp" alt="Downloadable Guides">
+                        <div class="recipe-card-content">
+                            <h3>Downloadable Guides</h3>
+                            <p>Deep dives into "Spice Route Recipes," "Hidden Street Food Gems," and "Comfort Food from Every Continent."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="recipes" style="display: none;">
+            <div class="container">
+                <h2>Our Global Recipe Collection</h2>
+                <p>This section would contain a searchable, filterable list of all recipes. Each recipe would link to its own dedicated page.</p>
+                </div>
+        </section>
+
+        <section id="about" style="display: none;">
+            <div class="container">
+                <h2>About LOSTINFLAVOR</h2>
+                <p>
+                    LOSTINFLAVOR is more than just a recipe website; it's a culinary journey. We believe that food is the ultimate passport, allowing us to explore diverse cultures and traditions without ever leaving our kitchens. Our passion lies in unearthing hidden culinary gems and sharing them with curious eaters, seasoned home cooks, and adventurous travelers alike.
+                </p>
+                <p>
+                    Our platform is built on the idea of discovery – not just finding a new recipe, but understanding its story, its origins, and its place in the world. We celebrate the bold, the unique, and the untamed flavors that truly transport you. From the bustling street food markets of Southeast Asia to the comforting stews of Eastern Europe, we bring the world's most exciting dishes to your fingertips.
+                </p>
+                <p>
+                    We emphasize visual storytelling, with rich imagery and sensory-driven language designed to immerse you in the culinary experience. Our recipes are carefully curated, focusing on authentic preparations while offering practical tips and ingredient swaps to ensure accessibility for every home cook. We're committed to fostering a community of food lovers who share our enthusiasm for global cuisine and culinary exploration. Join us, and get truly lost in flavor!
+                </p>
+            </div>
+        </section>
+
+        <section id="contact" style="display: none;">
+            <div class="container">
+                <h2>Contact Us</h2>
+                <p style="text-align: center;">Have a question, a recipe suggestion, or just want to share your culinary adventures? We'd love to hear from you!</p>
+                <form style="max-width: 600px; margin: 30px auto; padding: 20px; background-color: #fff; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                    <div style="margin-bottom: 15px;">
+                        <label for="name" style="display: block; margin-bottom: 5px; font-weight: bold;">Your Name:</label>
+                        <input type="text" id="name" name="name" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <label for="email" style="display: block; margin-bottom: 5px; font-weight: bold;">Your Email:</label>
+                        <input type="email" id="email" name="email" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <label for="subject" style="display: block; margin-bottom: 5px; font-weight: bold;">Subject:</label>
+                        <input type="text" id="subject" name="subject" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
+                    </div>
+                    <div style="margin-bottom: 20px;">
+                        <label for="message" style="display: block; margin-bottom: 5px; font-weight: bold;">Your Message:</label>
+                        <textarea id="message" name="message" rows="6" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px; resize: vertical;"></textarea>
+                    </div>
+                    <button type="submit" style="display: block; width: 100%; padding: 12px; background-color: var(--spice-red); color: var(--sandstone-cream); border: none; border-radius: 5px; font-size: 1.1em; cursor: pointer; transition: background-color 0.3s ease;">Send Message</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#explore">Explore Recipes</a></li>
+                        <li><a href="#features">Interactive Features</a></li>
+                        <li><a href="#marketplace">Marketplace</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect With Us</h4>
+                    <ul>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Pinterest</a></li>
+                        <li><a href="#">Newsletter Signup</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Accessibility Statement</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="disclaimer-text">
+                <h4>Disclaimer</h4>
+                <p>
+                    The information provided on LOSTINFLAVOR.com is for general informational and culinary exploration purposes only. While we strive to offer accurate and authentic recipes from around the world, the success of any recipe can vary based on individual skill, ingredient quality, equipment, and adherence to instructions. We cannot guarantee identical results for every user.
+                </p>
+                <p>
+                    LOSTINFLAVOR encourages safe cooking practices. Please exercise caution when using kitchen appliances, sharp tools, and hot surfaces. Always follow food safety guidelines, including proper handling of raw ingredients, cooking to appropriate temperatures, and avoiding cross-contamination. If you have any allergies or dietary restrictions, it is your responsibility to verify the ingredients and suitability of any recipe before consumption. We recommend consulting with a healthcare professional or a registered dietitian for personalized dietary advice.
+                </p>
+                <p>
+                    The cultural backgrounds and origin stories shared for each dish are based on general knowledge and research. Culinary traditions are rich and diverse, and variations exist. Our aim is to provide an appreciative overview rather than a definitive academic treatise. We welcome feedback and further insights from our global community to continually improve the accuracy and depth of our content.
+                </p>
+                <p>
+                    Links to external websites are provided for convenience and informational purposes only. LOSTINFLAVOR does not endorse, control, or take responsibility for the content, products, or services offered by third-party websites. Any reliance you place on such information is strictly at your own risk.
+                </p>
+                <p>
+                    Please be aware that ingredient availability can vary significantly by region. While we offer "Suggested Swaps" for local ingredient access, these are recommendations only. It is the user's discretion to find suitable alternatives. The flavor profile of a dish may change when substitutions are made.
+                </p>
+                <p>
+                    We reserve the right to modify or discontinue any aspect of this website at any time without prior notice. While we endeavor to keep the website accessible and the information up-to-date, we make no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, suitability, or availability with respect to the website or the information, products, services, or related graphics contained on the website for any purpose.
+                </p>
+                <p>
+                    By using LOSTINFLAVOR.com, you agree to these terms. If you do not agree with any part of this disclaimer, please do not use our website. Your continued use of the website following the posting of changes to this disclaimer will be deemed your acceptance of those changes.
+                </p>
+                <p>
+                    This disclaimer is intended to be comprehensive but may not cover every possible scenario. For any specific legal questions or concerns, please consult with a qualified legal professional. LOSTINFLAVOR and its affiliates, partners, and employees shall not be liable for any direct, indirect, incidental, consequential, or punitive damages arising out of your access to or use of our website. Your culinary adventure is yours to explore, and we are here to inspire, not to dictate. Happy cooking!
+                </p>
+            </div>
+
+            <div class="customer-satisfaction-text">
+                <h4>Customer Satisfaction at LOSTINFLAVOR</h4>
+                <p>
+                    At LOSTINFLAVOR, your satisfaction is at the heart of everything we do. We are passionate about creating a vibrant, engaging, and inspiring platform that helps you discover and create incredible global dishes. We measure our success not just by the number of recipes we share, but by the joy and culinary confidence we inspire in our community.
+                </p>
+                <p>
+                    We are committed to providing high-quality, well-researched, and easy-to-follow recipes. Each recipe is tested (often multiple times) to ensure clarity of instructions, accuracy of measurements, and delicious outcomes. We understand that cooking is an art and a science, and we strive to equip you with all the knowledge you need to succeed in your kitchen adventures.
+                </p>
+                <p>
+                    Your feedback is invaluable to us. Whether you've tried a recipe and loved it, have a suggestion for improvement, or encountered any issues, we encourage you to reach out. We actively monitor user comments, "Flavor Reactions," and direct messages to continuously refine our content and user experience. We believe in fostering a two-way dialogue with our community.
+                </p>
+                <p>
+                    We are constantly working to expand our recipe library, delve into new culinary regions, and enhance our interactive features. Our goal is to make LOSTINFLAVOR your go-to resource for culinary exploration, a place where you feel empowered to experiment, learn, and share your passion for food.
+                </p>
+                <p>
+                    Should you ever feel that your experience with LOSTINFLAVOR falls short of your expectations, please do not hesitate to contact our support team. We are dedicated to resolving any concerns promptly and fairly. We want every interaction with our platform to be a positive one, leaving you excited for your next culinary adventure. Your journey to flavor discovery is our priority.
+                </p>
+            </div>
+
+            <p class="address">
+                LOSTINFLAVOR Headquarters<br>
+                123 Global Flavors Lane<br>
+                Culinary City, Delhi, 110001<br>
+                India<br>
+                Email: info@lostinflavor.com<br>
+                Phone: +91-1234567890
+            </p>
+            <p>&copy; 2025 LOSTINFLAVOR. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
